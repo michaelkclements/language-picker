@@ -35,7 +35,7 @@ const data = {
   ],
   other: [
     { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
+    { name: 'German', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
     { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
     { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
     { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},

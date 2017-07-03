@@ -7,23 +7,24 @@ import ListItem from './ListItem'
 
 const StyledListContainer = styled.ul`
   background-color: #fff;
-  height: calc(100vh - 30px);
   list-style: none;
-  min-height: ${props => props.open ? '100%' : '0'};
+  height: 0%;
+  min-height: ${props => props.open ? 'calc(100vh - 30px)' : '0'};
   overflow-y: scroll;
   padding: 0;
   position: absolute;
-  transition: min-height 400ms cubic-bezier(.5,-0.25,.5,1.25);
+  transition: all 400ms cubic-bezier(.5,-0.25,.5,1.25);
   top: 100%;
   right: 0;
   width: 100vw;
 
   @media (min-width: 768px) {
     box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-    height: 0%;
     left: ${props => props.offRight ? 'auto' : '0%'};
     min-height: ${props => props.open ? '290px' : '0'};
     right: ${props => props.offRight ? '0%' : 'auto'};
+    transform: ${props => props.open ? 'scale(1)' : 'scale(0.5)'};
+    transform-origin: top right;
     width: 500px;
   }
 `

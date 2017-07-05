@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import data from '../../languages.json'
 import ListContainer from './ListContainer'
 
 const StyledLangPicker = styled.div`
@@ -12,44 +12,37 @@ const StyledLangPicker = styled.div`
 
 const StyledButton = styled.div`
   align-items: center;
-  background-color: ${props => props.open ? 'rgba(255,255,255,0.2)' : 'transparent'};
+  border-left: 1px solid #769BC8;
   cursor: pointer;
   display: flex;
-  height: 30px;
+  height: 42px;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
   transition: all 300ms ease;
   user-select: none;
-  width: 30px;
+  width: 42px;
+
+  &:before {
+    background-color: #4787FF;
+    border-radius: 50%;
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) ${props => props.open ? 'scale(1)' : 'scale(0)'};
+    transition: all 300ms ease;
+  }
 `
 
 const StyledButtonImage = styled.img`
-  height: 16px;
-  width: 16px;
+  height: 24px;
+  position: relative;
+  width: 24px;
+  z-index: 1;
 `
-
-
-const data = {
-  popular: [
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'French', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/flag-for-france_1f1eb-1f1f7.png'}
-  ],
-  other: [
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'German', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'English', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png'},
-    { name: 'French', flag: 'https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/flag-for-france_1f1eb-1f1f7.png'}
-  ]
-}
 
 class LangPicker extends Component {
 
@@ -76,7 +69,7 @@ class LangPicker extends Component {
   }
 
   _toggleMenu() {
-    this.setState({open: !this.state.open})
+    this.setState(prevState => ({ open: !prevState.open }))
   }
 
 }

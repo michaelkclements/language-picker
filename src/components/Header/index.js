@@ -12,11 +12,35 @@ const StyledHeader = styled.div`
 `
 
 const HeaderColumn = styled.div`
+  align-items: center;
   display: flex;
   flex: 1;
 
   &:last-child {
     justify-content: flex-end;
+  }
+`
+
+const Logo = styled.span`
+  color: #fff;
+  padding: 10px;
+`
+
+const PoundButton = styled.div`
+  align-items: center;
+  border-left: 1px solid #769BC8;
+  cursor: pointer;
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  user-select: none;
+  width: 42px;
+
+  &:before {
+    color: #fff;
+    content: '£';
+    font-size: 24px;
+    font-weight: 700;
   }
 `
 
@@ -27,13 +51,14 @@ class Header extends Component {
       <StyledHeader>
 
         <HeaderColumn>
-          <p>Logo</p>
+          <Logo>Logo</Logo>
         </HeaderColumn>
 
         <HeaderColumn>
           <LangPicker />
+          <PoundButton />
         </HeaderColumn>
-        
+
       </StyledHeader>
     )
   }

@@ -7,6 +7,7 @@ import ListItem from './ListItem'
 
 const StyledListContainer = styled.ul`
   background-color: #fff;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
   list-style: none;
   height: 0%;
   min-height: ${props => props.open ? 'calc(100vh - 30px)' : '0'};
@@ -30,7 +31,6 @@ const StyledListContainer = styled.ul`
   }
 
   @media (min-width: 768px) {
-    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
     left: ${props => props.offRight ? 'auto' : '0%'};
     min-height: ${props => props.open ? '290px' : '0'};
     position: absolute;

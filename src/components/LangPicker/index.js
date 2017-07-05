@@ -33,7 +33,7 @@ const StyledButton = styled.div`
     top: 0%;
     transform: translate(-50%,-50%) ${props => props.open ? 'scale(1)' : 'scale(0)'};
     transform-origin: top;
-    transition: all 300ms ease;
+    transition: all 400ms ease ${props => props.open ? '0s' : '200ms'};
   }
 `
 

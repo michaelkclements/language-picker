@@ -14,7 +14,7 @@ const StyledListContainer = styled.ul`
   padding: 0;
   position: fixed;
   transition: all 400ms cubic-bezier(.5,-0.25,.5,1.25) ${props => props.open ? '100ms' : '0s'};
-  top: 42px;
+  top: 50px;
   right: 0;
   width: 100vw;
 

@@ -31,10 +31,10 @@ const PoundButton = styled.div`
   border-left: 1px solid #769BC8;
   cursor: pointer;
   display: flex;
-  height: 42px;
+  height: 50px;
   justify-content: center;
   user-select: none;
-  width: 42px;
+  width: 50px;
 
   &:before {
     color: #fff;

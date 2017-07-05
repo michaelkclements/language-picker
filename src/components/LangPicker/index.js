@@ -19,7 +19,6 @@ const StyledButton = styled.div`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  transition: all 300ms ease;
   user-select: none;
   width: 42px;
 
@@ -27,12 +26,13 @@ const StyledButton = styled.div`
     background-color: #4787FF;
     border-radius: 50%;
     content: '';
-    width: 200%;
-    height: 200%;
+    width: 500%;
+    height: 300%;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 0%;
     transform: translate(-50%,-50%) ${props => props.open ? 'scale(1)' : 'scale(0)'};
+    transform-origin: top;
     transition: all 300ms ease;
   }
 `

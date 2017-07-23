@@ -14,7 +14,8 @@ const StyledListContainer = styled.ul`
   overflow-y: scroll;
   padding: 0;
   position: fixed;
-  transition: all 400ms cubic-bezier(.5,-0.25,.5,1.25) ${props => props.open ? '100ms' : '0s'};
+  transition: 400ms cubic-bezier(.5,-0.25,.5,1.25) ${props => props.open ? '100ms' : '0s'};
+  transition-property: min-height, transform;
   top: 50px;
   right: 0;
   width: 100vw;

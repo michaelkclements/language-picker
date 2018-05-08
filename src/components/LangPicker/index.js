@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import data from '../../languages.json'
+import data from '../../data/languages.json'
 import ListContainer from './ListContainer'
 
 const StyledLangPicker = styled.div`
@@ -58,11 +58,17 @@ class LangPicker extends Component {
     return(
       <StyledLangPicker>
 
-        <StyledButton onClick={this._toggleMenu} open={this.state.open}>
-          <StyledButtonImage src='https://emojipedia-us.s3.amazonaws.com/thumbs/240/emojipedia/102/flag-for-england_1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png' />
+        <StyledButton
+          onClick={this._toggleMenu}
+          open={this.state.open}
+        >
+          <StyledButtonImage src='https://i.imgur.com/BHZ7yhs.png' />
         </StyledButton>
 
-        <ListContainer data={data} open={this.state.open} />
+        <ListContainer
+          data={data}
+          open={this.state.open}
+        />
 
       </StyledLangPicker>
     )

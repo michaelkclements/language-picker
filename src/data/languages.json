@@ -1,0 +1,18 @@
+{
+  "popular": [
+    { "name": "English", "flag": "https://i.imgur.com/BHZ7yhs.png"},
+    { "name": "Français", "flag": "https://i.imgur.com/iCBmb4U.png"},
+    { "name": "Deutsch", "flag": "https://i.imgur.com/9oWP6J4.png"},
+    { "name": "Español", "flag": "https://i.imgur.com/JWL7y8Y.png"},
+    { "name": "Italiano", "flag": "https://i.imgur.com/1JOv9X6.png"},
+    { "name": "Polski", "flag": "https://i.imgur.com/pumcB4c.png"}
+  ],
+  "other": [
+    { "name": "English", "flag": "https://i.imgur.com/BHZ7yhs.png"},
+    { "name": "Français", "flag": "https://i.imgur.com/iCBmb4U.png"},
+    { "name": "Deutsch", "flag": "https://i.imgur.com/9oWP6J4.png"},
+    { "name": "Español", "flag": "https://i.imgur.com/JWL7y8Y.png"},
+    { "name": "Italiano", "flag": "https://i.imgur.com/1JOv9X6.png"},
+    { "name": "Polski", "flag": "https://i.imgur.com/pumcB4c.png"}
+  ]
+}

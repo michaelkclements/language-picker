@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import ReactDOM from 'react-dom'
 import ListItem from './ListItem'
 
 const StyledListContainer = styled.ul`
@@ -67,22 +67,43 @@ class ListContainer extends Component {
     this._isMenuOver()
   }
 
+  componentWillReceiveProps({parentWidth}) {
+    console.log(parentWidth);
+    this.setState({parentWidth: parentWidth})
+  }
+
   render() {
 
+    const { data, open } = this.props
+
     return(
-      <StyledListContainer innerRef={(i) => { this.listContainer = i }} offRight={this.state.offRight} open={this.props.open}>
+      <StyledListContainer
+        innerRef={(i) => { this.listContainer = i }}
+        offRight={this.state.offRight}
+        open={open}
+      >
 
         <ListHeader>Popular Languages</ListHeader>
         {
-          this.props.data.popular.map((language, i) => (
-            <ListItem key={i} flag={language.flag} name={language.name} clickItem={this._clickItem} />
+          data.popular.map((language, i) => (
+            <ListItem
+              clickItem={this._clickItem}
+              key={i}
+              flag={language.flag}
+              name={language.name}
+            />
           ))
         }
 
         <ListHeader>Other Languages</ListHeader>
         {
-          this.props.data.other.map((language, i) => (
-            <ListItem key={i} flag={language.flag} name={language.name} clickItem={this._clickItem} />
+          data.other.map((language, i) => (
+            <ListItem
+              clickItem={this._clickItem}
+              key={i}
+              flag={language.flag}
+              name={language.name}
+            />
           ))
         }
 
@@ -91,7 +112,7 @@ class ListContainer extends Component {
   }
 
   _isMenuOver() {
-    if (this.listContainer.getBoundingClientRect().right > window.innerWidth) {
+    if (this.listContainer.getBoundingClientRect().right > ReactDOM.findDOMNode(this).parentNode.parentNode.parentNode.offsetWidth) {
       this.setState({offRight: true})
     }
     else {

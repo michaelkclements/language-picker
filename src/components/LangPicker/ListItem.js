@@ -13,6 +13,10 @@ const StyledListItem = styled.li`
   position: relative;
   transition: all 300ms ease;
   user-select: none;
+
+  &:hover {
+    background-color: rgba(231,238,246,0.3);
+  }
 `
 
 const ItemImage = styled.img`
@@ -40,10 +44,15 @@ class ListItem extends Component {
 
   render() {
 
+    const { clickItem, flag, name } = this.props
+
     return(
-      <StyledListItem onClick={this.props.clickItem} active={this.state.active}>
-        <ItemImage src={this.props.flag} />
-        <ItemText>{this.props.name}</ItemText>
+      <StyledListItem
+        active={this.state.active}
+        onClick={clickItem}
+      >
+        <ItemImage src={flag} />
+        <ItemText>{name}</ItemText>
       </StyledListItem>
     )
   }
